@@ -1,0 +1,2 @@
+567;descricao 5;true;55;primeira caracteristica;true;1
+678;descricao 6;false;44;segunda caracteristica;false;2
