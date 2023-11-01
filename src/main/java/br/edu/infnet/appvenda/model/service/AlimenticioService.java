@@ -21,4 +21,8 @@ public class AlimenticioService {
 	public Collection<Alimenticio> obterLista(){	
 		return (Collection<Alimenticio>) alimenticioRepository.findAll();
 	}
+
+	public long obterQtde() {
+		return alimenticioRepository.count();
+	}
 }

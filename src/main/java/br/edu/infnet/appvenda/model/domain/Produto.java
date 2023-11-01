@@ -9,6 +9,8 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.PositiveOrZero;
 
 @Entity
 @Table(name = "TProduto")
@@ -18,7 +20,9 @@ public class Produto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String descricao;
+	@PositiveOrZero
 	private int codigo;
+	@Positive
 	private float preco;
 	private boolean estoque;
 	@ManyToOne
@@ -27,8 +31,8 @@ public class Produto {
 	
 	@Override
 	public String toString() {
-		return String.format("%d - %s - %d - %.2f - %s", 
-				id, descricao, codigo, preco, estoque);
+		return String.format("id (%d) - descricao (%s) - codigo (%d) - preco (%.2f) - estoque (%s) - vendedor [%s]", 
+				id, descricao, codigo, preco, estoque, vendedor);
 	}
 
 	public Integer getId() {
@@ -49,12 +53,15 @@ public class Produto {
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
+
 	public float getPreco() {
 		return preco;
 	}
+
 	public void setPreco(float preco) {
 		this.preco = preco;
 	}
+
 	public boolean isEstoque() {
 		return estoque;
 	}
@@ -69,4 +76,5 @@ public class Produto {
 	public void setVendedor(Vendedor vendedor) {
 		this.vendedor = vendedor;
 	}
+	private float valor;
 }

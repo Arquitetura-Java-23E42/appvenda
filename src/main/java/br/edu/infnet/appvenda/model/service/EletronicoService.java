@@ -21,4 +21,8 @@ public class EletronicoService {
 	public Collection<Eletronico> obterLista(){	
 		return (Collection<Eletronico>) eletronicoRepository.findAll();
 	}
+
+	public long obterQtde() {
+		return eletronicoRepository.count();
+	}
 }
