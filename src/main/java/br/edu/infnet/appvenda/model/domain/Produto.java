@@ -76,5 +76,4 @@ public class Produto {
 	public void setVendedor(Vendedor vendedor) {
 		this.vendedor = vendedor;
 	}
-	private float valor;
 }

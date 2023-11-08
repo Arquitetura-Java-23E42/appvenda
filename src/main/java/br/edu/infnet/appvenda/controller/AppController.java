@@ -33,15 +33,6 @@ public class AppController {
 		return "home";
 	}
 	
-	@GetMapping(value = "/vendedor/lista")
-	public String obterListaVendedor(Model model) {
-		
-		model.addAttribute("titulo", "Vendedores:");
-		model.addAttribute("listagem", vendedorService.obterLista());
-
-		return showHome(model);
-	}
-	
 	@GetMapping(value = "/produto/lista")
 	public String obterListaProduto(Model model) {
 		

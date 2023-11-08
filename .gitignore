@@ -6,6 +6,7 @@ target/
 
 .metadata
 application.properties
+log.txt*
 
 ### STS ###
 .apt_generated
